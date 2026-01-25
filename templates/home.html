@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KRTS Media Group - Antalya Merkezli Yeni Nesil Yazılım ve Dijital Dönüşüm Ajansı. QR Menü, Web Tasarım ve Mobil Uygulama Çözümleri.">
+    <title>KRTS MEDIA GROUP | Dijital Çözüm Ortağınız</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- GENEL AYARLAR --- */
+        :root {
+            --primary: #3498db; /* Teknoloji Mavisi */
+            --dark-bg: #050505;
+            --card-bg: #111;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .brand-font { font-family: 'Space Grotesk', sans-serif; }
+        html { scroll-behavior: smooth; }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background-color: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .navbar-brand { font-weight: 800; font-size: 1.6rem; letter-spacing: -1px; color: white !important; }
+        .nav-link { color: #bbb !important; font-weight: 500; font-size: 0.95rem; margin-left: 20px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary) !important; transform: translateY(-2px); }
+
+        /* --- HERO --- */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.6), var(--dark-bg)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            padding-top: 80px;
+        }
+        .hero-title {
+            font-size: 4rem; line-height: 1.1; font-weight: 800;
+            background: -webkit-linear-gradient(45deg, #fff, #999); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        @media (max-width: 768px) { .hero-title { font-size: 2.5rem; } }
+
+        /* --- BUTONLAR --- */
+        .btn-glow {
+            background: var(--primary); color: white; padding: 15px 40px; border-radius: 50px; font-weight: 700; border: none; 
+            transition: 0.3s; box-shadow: 0 0 20px rgba(52, 152, 219, 0.4);
+        }
+        .btn-glow:hover { background: #2980b9; transform: scale(1.05); box-shadow: 0 0 30px rgba(52, 152, 219, 0.6); color: white; }
+
+        /* --- GLASSCARD TASARIM --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            transition: 0.4s;
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+
+        /* --- DİĞER --- */
+        .section-padding { padding: 100px 0; }
+        .section-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
+        .text-gradient { background: -webkit-linear-gradient(45deg, #3498db, #2ecc71); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .icon-box { 
+            width: 70px; height: 70px; border-radius: 15px; background: rgba(52, 152, 219, 0.1); 
+            display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--primary); margin-bottom: 25px;
+        }
+        .hover-white:hover { color: white !important; }
+
+        /* --- FOOTER --- */
+        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 50px 0; font-size: 0.9rem; color: #666; }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">KRTS <span class="text-primary">MEDIA</span></a>
+            <button class="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Başlangıç</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Biz Kimiz?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Hizmetler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">JetMenu 🚀</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <div class="d-inline-block border border-secondary rounded-pill px-3 py-2 mb-4 bg-black bg-opacity-50">
+                <small class="text-uppercase letter-spacing-2 text-white-50">🚀 Geleceğin Yazılım Çözümleri</small>
+            </div>
+            
+            <h1 class="hero-title mb-4">GELECEĞİ<br>BUGÜNDEN KODLUYORUZ</h1>
+            
+            <p class="lead text-light opacity-75 mb-5 mx-auto" style="max-width: 800px; line-height: 1.8;">
+                Dijital dönüşüm bir seçenek değil, zorunluluktur. <br>
+                KRTS Media Group; global yazılım standartlarını estetik tasarımla birleştirerek, markanızı hak ettiği prestije kavuşturan teknoloji üssünüzdür.
+            </p>
+            
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#products" class="btn btn-glow">Projelerimiz</a>
+                <a href="#contact" class="btn btn-outline-light rounded-pill px-4 py-3 fw-bold" style="border-width:2px;">Tanışalım</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">İnovasyon ve <span class="text-gradient">Tutku</span></h2>
+                    <p class="lead text-light">KRTS MEDIA GROUP, standart kalıpların ötesinde, inovasyon odaklı bir yazılım evidir.</p>
+                    <p class="text-secondary mb-4">
+                        Amacımız sadece kod yazmak değil; teknolojiyi bir kaldıraç olarak kullanarak işletmeleri büyütmektir. 
+                        Web sistemlerinden yapay zeka destekli mobil uygulamalara kadar geniş bir yelpazede, ölçeklenebilir ve modern çözümler üretiyoruz. 
+                        Antalya'dan yönettiğimiz operasyonlarımızla, sınır tanımadan global kalitede hizmet sunuyoruz.
+                    </p>
+                    <div class="d-flex gap-4">
+                        <div>
+                            <h3 class="fw-bold text-white mb-0">%100</h3>
+                            <small class="text-muted">Yerli Yazılım</small>
+                        </div>
+                        <div>
+                            <h3 class="fw-bold text-white mb-0">Global</h3>
+                            <small class="text-muted">Vizyon</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="glass-card p-0 overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <img src="{{ url_for('static', filename='hasan.jpg') }}" 
+                                     onerror="this.src='https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'" 
+                                     class="img-fluid h-100 object-fit-cover" 
+                                     alt="Hasan Karataş"
+                                     style="min-height: 350px;">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="p-4 d-flex flex-column justify-content-center h-100">
+                                    <h6 class="text-primary fw-bold text-uppercase small ls-2 mb-2">Kurucu & Yazılım Geliştirici</h6>
+                                    <h3 class="text-white fw-bold mb-3">Hasan Karataş</h3>
+                                    
+                                    <p class="text-secondary small mb-3">
+                                        "20 yaşındayım ve teknolojinin gücüne inanıyorum. 
+                                        Yazılım dünyasındaki yolculuğumda bugüne kadar <strong>React Native, Java, Kotlin, C# ve Python</strong> ile sayısız proje geliştirdim."
+                                    </p>
+
+                                    <p class="text-secondary small fst-italic border-start border-primary ps-3">
+                                        "Hedefim; teknik yetkinliklerimi kullanarak, insanların hayatını kolaylaştıran, iş süreçlerini hızlandıran ve kalıcı değer yaratan projeler üretmektir."
+                                    </p>
+
+                                    <div class="mt-3">
+                                        <a href="#" class="text-white me-3 opacity-50 hover-opacity-100"><i class="fab fa-linkedin fa-lg"></i></a>
+                                        <a href="#" class="text-white me-3 opacity-50 hover-opacity-100"><i class="fab fa-github fa-lg"></i></a>
+                                        <a href="#" class="text-white opacity-50 hover-opacity-100"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding" style="background: #080808;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Dijital Çözümler</h2>
+                <p class="text-secondary">İşletmenizi büyütmek için ihtiyacınız olan her şey tek çatı altında.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <div class="icon-box"><i class="fas fa-code"></i></div>
+                        <h4 class="text-white fw-bold">Web & Yazılım</h4>
+                        <p class="text-secondary small mt-3">Sadece güzel görünen değil, arka planda kusursuz çalışan, güvenli ve hızlı web sistemleri kodluyoruz.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+                        <h4 class="text-white fw-bold">Mobil Uygulama</h4>
+                        <p class="text-secondary small mt-3">iOS ve Android ekosisteminde çalışan, kullanıcı deneyimi (UX) odaklı yüksek performanslı uygulamalar.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <div class="icon-box"><i class="fas fa-rocket"></i></div>
+                        <h4 class="text-white fw-bold">Marka Büyütme</h4>
+                        <p class="text-secondary small mt-3">Dijital varlığınızı güçlendirecek stratejiler, sosyal medya yönetimi ve kurumsal kimlik çalışmaları.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section-padding">
+        <div class="container">
+            <div class="glass-card border-0" style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);">
+                <div class="row align-items-center">
+                    <div class="col-md-6 order-2 order-md-1 p-4 p-md-5">
+                        <span class="badge bg-danger mb-3 px-3 py-2 rounded-pill">AMİRAL GEMİMİZ</span>
+                        <h2 class="display-5 fw-bold text-white mb-3">JetMenu <span class="text-primary">App</span></h2>
+                        <p class="lead text-secondary mb-4">
+                            Restoran ve oteller için geliştirdiğimiz, yeni nesil temassız QR sipariş ve yönetim sistemi.
+                        </p>
+                        <div class="d-flex flex-column gap-3 mb-4">
+                            <div class="d-flex align-items-center text-white-50">
+                                <i class="fas fa-check-circle text-success me-3"></i> Uygulama indirmeden anında erişim
+                            </div>
+                            <div class="d-flex align-items-center text-white-50">
+                                <i class="fas fa-check-circle text-success me-3"></i> Masadan garson çağırma & hesap isteme
+                            </div>
+                            <div class="d-flex align-items-center text-white-50">
+                                <i class="fas fa-check-circle text-success me-3"></i> Yönetim paneli ile anlık fiyat kontrolü
+                            </div>
+                        </div>
+                        <a href="http://127.0.0.1:5000" target="_blank" class="btn btn-light rounded-pill px-5 py-3 fw-bold">Demoyu İncele <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                    <div class="col-md-6 order-1 order-md-2 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3225/3225186.png" class="img-fluid" style="max-height: 350px; filter: drop-shadow(0 0 40px rgba(52, 152, 219, 0.15)); animation: float 6s ease-in-out infinite;" alt="JetMenu">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding bg-black">
+        <div class="container text-center">
+            <h2 class="section-title">Hemen Başlayalım</h2>
+            <p class="text-secondary mb-5 mx-auto" style="max-width: 600px;">
+                Fikrinizi hayata geçirmek için bir kahve molası verelim. <br>
+                Online toplantı yapabilir veya <span class="text-white fw-bold">projenizi detaylandırmak için görüşebiliriz.</span>
+            </p>
+            
+            <div class="row justify-content-center g-4">
+                <div class="col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="glass-card py-4">
+                            <i class="fab fa-whatsapp fa-3x text-success mb-3"></i>
+                            <h5 class="text-white">WhatsApp Hattı</h5>
+                            <p class="text-secondary small mb-0">+90 555 000 00 00</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="glass-card py-4">
+                            <i class="fab fa-instagram fa-3x text-danger mb-3"></i>
+                            <h5 class="text-white">Instagram</h5>
+                            <p class="text-secondary small mb-0">@krtsmedia</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <h4 class="brand-font fw-bold text-white mb-3">KRTS <span class="text-primary">MEDIA</span></h4>
+            <p class="mb-4 small opacity-50">Antalya, Türkiye</p>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="#" class="text-secondary hover-white"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-secondary hover-white"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-secondary hover-white"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="mb-0 x-small">&copy; <script>document.write(new Date().getFullYear())</script> <strong>KRTS MEDIA GROUP</strong>. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <style>
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
