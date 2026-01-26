@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KRTS Media Group | Geleceği Kodluyoruz</title>
-    <meta name="description" content="Antalya merkezli yazılım ajansı. KrtsBarber Pro ve JetQrMenu ile işletmenizi dijitalleştirin.">
+    <title>KRTS Media Group | İşletmenizi Dijitalleştiriyoruz</title>
+    <meta name="description" content="Antalya merkezli KRTS Media Group ile işletmenizi dijital çağa uyumlu hale getiriyoruz. Ücretsiz kurulum ve jet hızında çözümler.">
     
     <link rel="icon" href="assets/img/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -21,24 +21,14 @@
             --accent: #e0aaff;
         }
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--dark-bg);
-            color: #fff;
-            overflow-x: hidden;
-        }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--dark-bg); color: #fff; overflow-x: hidden; }
         
-        .navbar {
-            padding: 20px 0;
-            background-color: rgba(16, 0, 43, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(157, 78, 221, 0.1);
-        }
+        /* Navbar */
+        .navbar { padding: 20px 0; background-color: rgba(16, 0, 43, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(157, 78, 221, 0.1); }
         .navbar-brand { font-weight: 800; font-size: 26px; color: #fff !important; }
         .navbar-brand span { color: var(--secondary-color); text-shadow: 0 0 15px rgba(157, 78, 221, 0.6); }
-        .nav-link { font-weight: 500; color: var(--text-color) !important; margin: 0 10px; transition: 0.3s; }
-        .nav-link:hover { color: #fff !important; text-shadow: 0 0 10px var(--secondary-color); }
 
+        /* Buttons */
         .btn-glow {
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             border: none; color: white; padding: 12px 30px; border-radius: 50px;
@@ -46,20 +36,22 @@
         }
         .btn-glow:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(157, 78, 221, 0.8); color: white; }
 
+        /* Sections */
         .hero-section { padding: 160px 0 100px; background: radial-gradient(circle at top right, #3c096c 0%, #10002b 65%); }
-        .hero-title { font-size: 4rem; font-weight: 800; line-height: 1.1; background: -webkit-linear-gradient(45deg, #fff, #e0aaff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-title { font-size: 3.5rem; font-weight: 800; line-height: 1.2; background: -webkit-linear-gradient(45deg, #fff, #e0aaff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .service-card { padding: 30px; border: 1px solid rgba(157, 78, 221, 0.2); border-radius: 20px; background: rgba(36, 0, 70, 0.4); transition: 0.4s ease; height: 100%; }
+        /* Feature Cards */
+        .feature-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; color: #fff; }
+        .feature-item i { color: #22c55e; font-size: 1.1rem; }
+
+        .service-card { padding: 30px; border: 1px solid rgba(157, 78, 221, 0.2); border-radius: 20px; background: rgba(36, 0, 70, 0.4); transition: 0.4s ease; height: 100%; text-align: center; }
         .service-card:hover { transform: translateY(-10px); background: rgba(36, 0, 70, 0.8); border-color: var(--secondary-color); }
-        .icon-wrapper { width: 60px; height: 60px; background: rgba(157, 78, 221, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 24px; margin-bottom: 20px; }
+        .icon-wrapper { width: 60px; height: 60px; background: rgba(157, 78, 221, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 24px; margin: 0 auto 20px; }
 
-        .product-section { padding: 100px 0; background: linear-gradient(180deg, #10002b 0%, #240046 100%); }
-        .product-box { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; padding: 50px; margin-bottom: 40px; }
+        .product-box { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 30px; padding: 50px; margin-bottom: 40px; position: relative; overflow: hidden; }
         .product-badge { background: var(--secondary-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        .admin-feature { font-size: 0.85rem; color: #22c55e; font-weight: 600; display: flex; align-items: center; gap: 8px; }
 
-        footer { background: #0a001a; padding: 60px 0 30px; color: var(--text-color); }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); z-index: 1000; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
     </style>
 </head>
 <body>
@@ -69,9 +61,8 @@
             <a class="navbar-brand" href="#">KRTS <span>MEDIA</span></a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#hizmetler">Hizmetler</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#urunler">Ürünler</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hizmetler">Ayrıcalıklar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#urunler">Sistemler</a></li>
                     <li class="nav-item ms-lg-3"><a href="https://wa.me/905421565602" class="btn btn-glow">Fikrini Anlat</a></li>
                 </ul>
             </div>
@@ -79,12 +70,11 @@
     </nav>
 
     <section class="hero-section">
-        <div class="container text-center text-lg-start">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1 class="hero-title">Hayal Et.<br>Kodla.<br>Yönet.</h1>
-                    <p class="mt-4 lead text-white-50">KrtsMedia ile işletmenizi sadece dijitalleştirmiyoruz, size özel yönetim panelleriyle kontrolü tamamen size veriyoruz.</p>
-                </div>
+        <div class="container text-center">
+            <h1 class="hero-title">İşletmenizi dijital çağa<br>uyumlu hale getiriyoruz.</h1>
+            <p class="mt-4 lead text-white-50 mx-auto" style="max-width: 800px;">Sektörünüz ne olursa olsun; admin paneli dahil, ücretsiz kurulum avantajıyla jet hızında dijitalleşin. KrtsMedia ile yönetmek artık çok kolay.</p>
+            <div class="d-flex justify-content-center gap-3 mt-5">
+                <a href="https://wa.me/905421565602" class="btn btn-glow px-4 py-3">Ücretsiz Danışmanlık Al</a>
             </div>
         </div>
     </section>
@@ -93,31 +83,31 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-card text-center text-lg-start">
-                        <div class="icon-wrapper mx-auto mx-lg-0"><i class="fas fa-chart-pie"></i></div>
-                        <h4 class="text-white">Yönetim Panelleri</h4>
-                        <p class="small text-white-50">İşletmenizi telefonunuzdan yöneteceğiniz, ciro ve stok takibi yapan özel dashboardlar.</p>
+                    <div class="service-card">
+                        <div class="icon-wrapper"><i class="fas fa-shield-alt"></i></div>
+                        <h5 class="text-white">Admin Paneli Dahil</h5>
+                        <p class="small text-white-50">Tüm sistemlerimizi size özel yönetim paneliyle teslim ediyoruz.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-card text-center text-lg-start">
-                        <div class="icon-wrapper mx-auto mx-lg-0"><i class="fas fa-calendar-alt"></i></div>
-                        <h4 class="text-white">Randevu Sistemleri</h4>
-                        <p class="small text-white-50">AI destekli asistan ve patron kontrol paneliyle eksiksiz randevu yönetimi.</p>
+                    <div class="service-card">
+                        <div class="icon-wrapper"><i class="fas fa-tools"></i></div>
+                        <h5 class="text-white">Ücretsiz Kurulum</h5>
+                        <p class="small text-white-50">Teknik detaylarla boğuşmayın, kurulumu biz ücretsiz yapıyoruz.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-card text-center text-lg-start">
-                        <div class="icon-wrapper mx-auto mx-lg-0"><i class="fas fa-mobile-alt"></i></div>
-                        <h4 class="text-white">Mobil Uygulama</h4>
-                        <p class="small text-white-50">Kullanıcı dostu arayüzler ve güçlü admin altyapılı uygulamalar.</p>
+                    <div class="service-card">
+                        <div class="icon-wrapper"><i class="fas fa-bolt"></i></div>
+                        <h5 class="text-white">Jet Hızında Çalışma</h5>
+                        <p class="small text-white-50">En yeni teknolojilerle (Python, React) ışık hızında bir deneyim.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-card text-center text-lg-start">
-                        <div class="icon-wrapper mx-auto mx-lg-0"><i class="fas fa-robot"></i></div>
-                        <h4 class="text-white">Otomasyon</h4>
-                        <p class="small text-white-50">Tekrarlayan işleri sıfıra indiren akıllı botlar ve dijital asistanlar.</p>
+                    <div class="service-card">
+                        <div class="icon-wrapper"><i class="fas fa-headset"></i></div>
+                        <h5 class="text-white">7/24 Uzaktan Destek</h5>
+                        <p class="small text-white-50">Yazılım desteğimizle her zaman bir telefon kadar uzağınızdayız.</p>
                     </div>
                 </div>
             </div>
@@ -126,53 +116,74 @@
 
     <section id="urunler" class="product-section">
         <div class="container">
-            <div class="text-center mb-5"><h2 class="fw-bold">Kurumsal Ürünlerimiz</h2></div>
+            <div class="text-center mb-5"><h2 class="fw-bold">Hazır Kurumsal Sistemler</h2></div>
             
-            <div class="product-box" style="background: rgba(123, 44, 191, 0.1); border: 1px solid var(--secondary-color);">
+            <div class="product-box" style="border-left: 5px solid var(--secondary-color);">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <span class="product-badge mb-3 d-inline-block">Full Paket Teslimat</span>
+                    <div class="col-lg-7">
+                        <span class="product-badge mb-3 d-inline-block">VIP Randevu & İşletme</span>
                         <h2 class="fw-bold text-white">KrtsBarber Pro 💈</h2>
-                        <p class="text-white-50">Berber ve kuaförler için AI destekli randevu sistemi. <strong>Bu ürün, işletme sahibine özel gelişmiş bir Admin Paneli ile birlikte teslim edilir.</strong></p>
+                        <p class="text-white-50">İşletmenizi dijital asistanla yönetin.</p>
                         
-                        <div class="admin-feature mb-2"><i class="fas fa-check-circle"></i> Canlı Ciro Takibi ve Finansal Rapor</div>
-                        <div class="admin-feature mb-2"><i class="fas fa-check-circle"></i> Tek Tıkla Randevu Kapatma & Arşivleme</div>
-                        <div class="admin-feature mb-4"><i class="fas fa-check-circle"></i> VIP Müşteri ve Sadakat Analizi</div>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="feature-item"><i class="fas fa-check-double"></i> Admin Paneli Dahil</div>
+                                <div class="feature-item"><i class="fas fa-check-double"></i> Jet Hızında Arayüz</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item"><i class="fas fa-check-double"></i> Ücretsiz Kurulum</div>
+                                <div class="feature-item"><i class="fas fa-check-double"></i> 7/24 Yazılım Desteği</div>
+                            </div>
+                        </div>
 
-                        <a href="https://krts-booking.onrender.com" target="_blank" class="btn btn-glow px-4">Demoyu ve Admini İncele</a>
+                        <a href="https://krts-booking.onrender.com" target="_blank" class="btn btn-glow mt-4">Demoyu Hemen Test Et</a>
                     </div>
-                    <div class="col-lg-6 text-center order-lg-1 mt-4 mt-lg-0">
-                        <i class="fas fa-user-shield" style="font-size: 100px; color: var(--secondary-color); filter: drop-shadow(0 0 20px var(--primary-color));"></i>
-                        <div class="mt-3 text-white-50 small">Güçlü Yönetim, Tam Kontrol</div>
+                    <div class="col-lg-5 text-center d-none d-lg-block">
+                        <i class="fas fa-laptop-medical" style="font-size: 100px; color: var(--secondary-color);"></i>
                     </div>
                 </div>
             </div>
 
-            <div class="product-box">
+            <div class="product-box" style="border-left: 5px solid #00f2ff;">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <span class="product-badge mb-3 d-inline-block">Restoran Otomasyonu</span>
+                    <div class="col-lg-7">
+                        <span class="product-badge mb-3 d-inline-block" style="background: #00f2ff; color: #10002b;">Hızlı Menü & Sipariş</span>
                         <h2 class="fw-bold text-white">JetQrMenu 🚀</h2>
-                        <p class="text-white-50">Hızlı sipariş, temassız menü ve patronlar için anlık mutfak yönetim paneli.</p>
-                        <a href="https://wa.me/905421565602" class="btn btn-light rounded-pill px-4 mt-3 fw-bold">Bilgi Al</a>
+                        <p class="text-white-50">Restoran ve cafeler için en hızlı QR otomasyonu.</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="feature-item"><i class="fas fa-check-double"></i> Mutfak Paneli Dahil</div>
+                                <div class="feature-item"><i class="fas fa-check-double"></i> Jet Sipariş Hızı</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item"><i class="fas fa-check-double"></i> Ücretsiz Kurulum</div>
+                                <div class="feature-item"><i class="fas fa-check-double"></i> Uzaktan Teknik Destek</div>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/905421565602" class="btn btn-outline-light rounded-pill px-4 mt-4">Hemen Bilgi Al</a>
                     </div>
-                    <div class="col-lg-6 text-center mt-4 mt-lg-0">
-                        <i class="fas fa-qrcode" style="font-size: 80px; opacity: 0.5;"></i>
+                    <div class="col-lg-5 text-center d-none d-lg-block">
+                        <i class="fas fa-mobile-alt" style="font-size: 100px; opacity: 0.3;"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="iletisim">
-        <div class="container text-center">
-            <h4 class="fw-bold text-white mb-4">KRTS MEDIA GROUP</h4>
-            <p class="small text-white-50">&copy; 2026 KRTS Media Group. Tüm hakları saklıdır. Antalya, TR.</p>
+    <footer class="py-5 text-center border-top border-secondary">
+        <div class="container">
+            <h4 class="fw-bold text-white mb-3">KRTS MEDIA GROUP</h4>
+            <div class="d-flex justify-content-center gap-3 mb-4 fs-4">
+                <a href="https://instagram.com/krtsmediagroup" class="text-white"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/905421565602" class="text-white"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="small text-white-50">Antalya'dan Dijital Çağa Uzanan Teknoloji Köprüsü. &copy; 2026</p>
         </div>
     </footer>
 
     <a href="https://wa.me/905421565602" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
