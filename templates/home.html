@@ -3,356 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KRTS Media Group | Dijital Çözüm Ortağınız</title>
-    <meta name="description" content="Antalya merkezli KRTS Media Group ile işletmenizi dijital çağa uyumlu hale getiriyoruz. Web sitesi, randevu sistemi ve özel yazılım çözümleri.">
+    <title>KRTS Media | Global Software & Design Studio</title>
     
-    <link rel="icon" href="assets/img/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <style>
         :root {
-            --primary-color: #7b2cbf;
-            --secondary-color: #9d4edd;
-            --dark-bg: #10002b;
-            --card-bg: #240046;
-            --text-color: #e0aaff;
-            --accent: #e0aaff;
+            --primary: #7b2cbf;
+            --secondary: #9d4edd;
+            --dark-bg: #030303;
+            --text-main: #ffffff;
+            --accent-gold: #ffb703;
+            --glass: rgba(255, 255, 255, 0.02);
+            --neon-shadow: 0 0 20px rgba(123, 44, 191, 0.3);
         }
 
         body { 
-            font-family: 'Outfit', sans-serif; 
-            background-color: var(--dark-bg); 
-            color: #fff; 
-            overflow-x: hidden; 
-            position: relative;
-        }
-        
-        /* --- Arka Plan Animasyonu (Mobil Uyumlu) --- */
-        .background-animate {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        .blob {
-            position: absolute;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: float 10s infinite ease-in-out alternate;
-        }
-        .blob-1 { top: 10%; left: 10%; width: 300px; height: 300px; background: var(--primary-color); animation-delay: 0s; }
-        .blob-2 { bottom: 20%; right: 10%; width: 350px; height: 350px; background: #ff006e; animation-delay: -5s; }
-        .blob-3 { top: 40%; left: 50%; width: 200px; height: 200px; background: #3a0ca3; animation-delay: -2s; opacity: 0.3; }
-
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(30px, 50px); }
+            font-family: 'Outfit', sans-serif; background-color: var(--dark-bg); color: var(--text-main); 
+            overflow-x: hidden; cursor: none; scroll-behavior: smooth;
         }
 
-        /* --- Navbar --- */
-        .navbar { padding: 15px 0; background-color: rgba(16, 0, 43, 0.9); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(157, 78, 221, 0.1); z-index: 1000; }
-        .navbar-brand { font-weight: 800; font-size: 24px; color: #fff !important; }
-        .navbar-brand span { color: var(--secondary-color); text-shadow: 0 0 15px rgba(157, 78, 221, 0.6); }
-
-        /* --- Buttons --- */
-        .btn-glow {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            border: none; color: white; padding: 12px 30px; border-radius: 50px;
-            font-weight: 600; box-shadow: 0 4px 15px rgba(123, 44, 191, 0.4); transition: 0.3s ease;
+        /* --- Elite Cursor --- */
+        #cursor {
+            width: 10px; height: 10px; background: #fff; border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 999999; mix-blend-mode: difference;
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .btn-glow:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(157, 78, 221, 0.8); color: white; }
-
-        /* --- Hero Section & Typewriter --- */
-        .hero-section { padding: 160px 0 80px; position: relative; }
-        .hero-title { font-size: 3.5rem; font-weight: 800; line-height: 1.2; }
-        .typewriter-text { color: var(--secondary-color); border-right: 3px solid var(--secondary-color); padding-right: 5px; animation: blink 0.7s infinite; }
-        
-        @keyframes blink { 50% { border-color: transparent; } }
-
-        /* --- Stats Section --- */
-        .stats-box { background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(5px); }
-
-        /* --- Cards & Tilt --- */
-        .service-card { 
-            padding: 30px; 
-            border: 1px solid rgba(157, 78, 221, 0.2); 
-            border-radius: 20px; 
-            background: rgba(36, 0, 70, 0.4); 
-            height: 100%; 
-            text-align: center; 
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-            margin-bottom: 10px;
+        #cursor-follower {
+            width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%; position: fixed; pointer-events: none; z-index: 999998;
+            transition: transform 0.1s linear;
         }
-        
-        .icon-wrapper { width: 60px; height: 60px; background: rgba(157, 78, 221, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 24px; margin: 0 auto 20px; transform: translateZ(20px); }
-        .service-card h5 { transform: translateZ(15px); }
-        .service-card p { transform: translateZ(10px); }
 
-        /* --- Product Boxes --- */
-        .product-box { 
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            border-radius: 30px; 
-            padding: 50px; 
-            margin-bottom: 40px; 
-            position: relative; 
-            overflow: hidden;
-            transform-style: preserve-3d;
-            transform: perspective(1000px);
-            transition: 0.3s;
+        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
+
+        /* --- Section Titles --- */
+        .section-tag { color: var(--secondary); font-weight: 800; letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; }
+
+        /* --- Glass Card 3.0 --- */
+        .elite-card {
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 35px; padding: 50px; transition: 0.5s; position: relative; overflow: hidden;
+            backdrop-filter: blur(20px); height: 100%;
         }
-        .product-content { transform: translateZ(30px); }
-        .product-icon-lg { transform: translateZ(50px); filter: drop-shadow(0 0 20px rgba(157, 78, 221, 0.3)); }
-        
-        .product-badge { background: var(--secondary-color); color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .elite-card::before {
+            content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(157, 78, 221, 0.1) 0%, transparent 70%);
+            opacity: 0; transition: 0.5s;
+        }
+        .elite-card:hover::before { opacity: 1; }
+        .elite-card:hover { border-color: var(--secondary); transform: translateY(-15px); }
 
-        .feature-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 0.95rem; color: #fff; }
-        .feature-item i { font-size: 1.1rem; }
+        /* --- Pricing Tiers --- */
+        .price-card {
+            border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 40px;
+            background: rgba(10,10,10,0.5); transition: 0.3s;
+        }
+        .price-card.featured { border: 2px solid var(--primary); box-shadow: var(--neon-shadow); transform: scale(1.05); z-index: 2; }
+        .price-list { list-style: none; padding: 0; margin-top: 25px; }
+        .price-list li { margin-bottom: 12px; font-size: 0.9rem; color: #aaa; }
+        .price-list li i { color: var(--secondary); margin-right: 10px; }
 
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: #FFF; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); transition: 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1); }
+        /* --- Roadmap (Process) --- */
+        .roadmap-item { position: relative; padding-left: 40px; border-left: 1px solid rgba(255,255,255,0.1); margin-bottom: 40px; }
+        .roadmap-item::after {
+            content: ""; position: absolute; left: -6px; top: 0; width: 11px; height: 11px;
+            background: var(--secondary); border-radius: 50%; box-shadow: 0 0 10px var(--secondary);
+        }
 
-        /* --- Mobile Responsive Fixes (ÖNEMLİ) --- */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; margin-top: 20px;}
-            .hero-section { padding: 120px 0 50px; }
-            .product-box { padding: 30px 20px; text-align: left; }
-            .col-lg-5 { display: none !important; } /* Mobilde büyük ikonları gizle, yer kaplamasın */
-            .navbar-collapse { background: rgba(16, 0, 43, 0.95); padding: 20px; border-radius: 15px; margin-top: 10px; border: 1px solid rgba(255,255,255,0.1); }
-            .blob { filter: blur(60px); opacity: 0.3; } /* Mobilde performansı artırmak için blur azaltıldı */
+        .btn-supreme {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none; color: white; padding: 18px 45px; border-radius: 100px;
+            font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+            transition: 0.3s; box-shadow: var(--neon-shadow);
+        }
+        .btn-supreme:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 10px 40px rgba(123, 44, 191, 0.5); color: #fff; }
+
+        @media(max-width: 768px) {
+            .elite-card { padding: 30px; }
+            .price-card.featured { transform: scale(1); margin: 20px 0; }
         }
     </style>
 </head>
 <body>
 
-    <div class="background-animate">
-        <div class="blob blob-1 rounded-circle"></div>
-        <div class="blob blob-2 rounded-circle"></div>
-        <div class="blob blob-3 rounded-circle"></div>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+    <div id="particles-js"></div>
+
+    <div id="preloader" style="position: fixed; top:0; left:0; width:100%; height:100%; background:#000; z-index:999999; display:flex; justify-content:center; align-items:center; flex-direction:column;">
+        <div class="glitch-text h2 fw-bold" style="letter-spacing: 10px;">KRTS MEDIA</div>
+        <div class="progress mt-4" style="width: 200px; height: 2px; background: rgba(255,255,255,0.1);">
+            <div class="progress-bar bg-white" style="width: 0%; transition: 2s;"></div>
+        </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <section class="min-vh-100 d-flex align-items-center">
         <div class="container">
-            <a class="navbar-brand" href="#">KRTS <span>MEDIA</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border:none; color: white;">
-                <i class="fas fa-bars" style="font-size: 24px; color: white;"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link text-white" href="#hizmetler">Ayrıcalıklar</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#urunler">Sistemler</a></li>
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0"><a href="https://wa.me/905421565602" class="btn btn-glow w-100">Fikrini Anlat</a></li>
-                </ul>
+            <div class="row align-items-center">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <span class="section-tag mb-3 d-block">Elite Software Studio</span>
+                    <h1 class="display-1 fw-extrabold mb-4" style="line-height: 0.9;">Dijital <br><span style="color: var(--secondary);">Ekosisteminizi</span><br>İnşa Edin.</h1>
+                    <p class="lead text-muted mb-5 w-75">Sadece kod yazmıyoruz. Veri, estetik ve teknolojiyi birleştirerek işletmenizi global bir markaya dönüştürüyoruz.</p>
+                    <div class="d-flex gap-4 align-items-center">
+                        <a href="#contact" class="btn btn-supreme">Projeyi Başlat</a>
+                        <a href="#process" class="text-white text-decoration-none small fw-bold">Süreç Nasıl İşler? <i class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <section class="hero-section">
+    <section id="process" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-up">
+                    <span class="section-tag">Strateji</span>
+                    <h2 class="display-4 fw-bold text-white mb-5">Düşünceden <br>Yayına Giden Yol</h2>
+                    <div class="roadmap-item">
+                        <h5 class="fw-bold">01. Analiz & Mimari</h5>
+                        <p class="text-muted small">İşinizi dinliyoruz, rakiplerinizi analiz ediyoruz ve teknik yol haritasını çiziyoruz.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h5 class="fw-bold">02. Elite Tasarım</h5>
+                        <p class="text-muted small">Markanızın ruhunu yansıtan, yüksek dönüşüm odaklı UI/UX tasarımlar hazırlıyoruz.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h5 class="fw-bold">03. Akıllı Kodlama</h5>
+                        <p class="text-muted small">Python, React ve modern altyapılarla jet hızında, güvenli sistemler inşa ediyoruz.</p>
+                    </div>
+                    <div class="roadmap-item" style="border:none">
+                        <h5 class="fw-bold">04. Ölçekleme & Destek</h5>
+                        <p class="text-muted small">Yayından sonra sizi bırakmıyoruz. Verileri analiz ederek sistemi sürekli büyütüyoruz.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1" data-aos="fade-left">
+                    <div class="elite-card d-flex align-items-center justify-content-center">
+                        <div class="text-center">
+                            <div class="display-1 fw-bold text-secondary mb-3">24/7</div>
+                            <h4 class="fw-bold">Kesintisiz Teknoloji Danışmanlığı</h4>
+                            <p class="text-muted">Projeniz yayına girdikten sonra teknik tüm yükü biz üstleniyoruz. Siz sadece büyümeye odaklanın.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-5 bg-black bg-opacity-20">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Yatırım Planları</span>
+                <h2 class="display-4 fw-bold text-white">Net Fiyatlar, <br>Sınırsız İmkânlar.</h2>
+            </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="price-card">
+                        <h4 class="fw-bold">Startup</h4>
+                        <div class="h2 fw-bold text-white mt-3">7.500₺ <span class="small text-muted fs-6">'den başlayan</span></div>
+                        <ul class="price-list">
+                            <li><i class="fas fa-check"></i> Tek Sayfa (One-Page)</li>
+                            <li><i class="fas fa-check"></i> Mobil Uyumlu Tasarım</li>
+                            <li><i class="fas fa-check"></i> WhatsApp Entegrasyonu</li>
+                            <li><i class="fas fa-check"></i> 1 Yıl Hosting Dahil</li>
+                        </ul>
+                        <a href="https://wa.me/905421565602?text=Startup" class="btn btn-outline-light w-100 mt-4 rounded-pill">Başla</a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up">
+                    <div class="price-card featured">
+                        <span class="badge bg-primary mb-3">EN ÇOK TERCİH EDİLEN</span>
+                        <h4 class="fw-bold">Kurumsal</h4>
+                        <div class="h2 fw-bold text-white mt-3">15.000₺ <span class="small text-muted fs-6">'den başlayan</span></div>
+                        <ul class="price-list">
+                            <li><i class="fas fa-check"></i> Çok Sayfalı Mimari</li>
+                            <li><i class="fas fa-check"></i> <strong>Yönetim Paneli (Admin)</strong></li>
+                            <li><i class="fas fa-check"></i> Blog / Haber Sistemi</li>
+                            <li><i class="fas fa-check"></i> Gelişmiş SEO Paketi</li>
+                            <li><i class="fas fa-check"></i> Google Harita Kaydı</li>
+                        </ul>
+                        <a href="https://wa.me/905421565602?text=Kurumsal" class="btn btn-supreme w-100 mt-4">Hemen Başla</a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="price-card">
+                        <h4 class="fw-bold">Enterprise</h4>
+                        <div class="h2 fw-bold text-white mt-3">Teklif Alın</div>
+                        <ul class="price-list">
+                            <li><i class="fas fa-check"></i> Özel Randevu Sistemleri</li>
+                            <li><i class="fas fa-check"></i> E-Ticaret Altyapıları</li>
+                            <li><i class="fas fa-check"></i> API Entegrasyonları</li>
+                            <li><i class="fas fa-check"></i> Özel Veritabanı Mimarisi</li>
+                            <li><i class="fas fa-check"></i> 7/24 VIP Destek Hattı</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-light w-100 mt-4 rounded-pill">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-5 mt-5">
         <div class="container text-center">
-            <h1 class="hero-title text-white">İşletmeniz için<br> 
-                <span class="typewriter-text"></span>
-            </h1>
-            <p class="mt-4 lead text-white-50 mx-auto" style="max-width: 800px; font-size: 1.1rem;">
-                Sektörünüz ne olursa olsun; admin paneli dahil, ücretsiz kurulum avantajıyla jet hızında dijitalleşin. <br class="d-none d-md-block"> KrtsMedia ile yönetmek artık çok kolay.
-            </p>
-            <div class="d-flex justify-content-center gap-3 mt-5">
-                <a href="https://wa.me/905421565602" class="btn btn-glow px-5 py-3 fs-5">Ücretsiz Danışmanlık Al</a>
+            <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Sıradaki Başarı <br>Hikayesi Sizin Olsun.</h2>
+            <a href="https://wa.me/905421565602" class="btn btn-supreme px-5 mb-5">Ücretsiz Analiz Başlat</a>
+            <div class="opacity-50 small mt-5">
+                &copy; 2026 KRTS Media Group. Antalya'dan Global Teknolojiye.
             </div>
-        </div>
-    </section>
-
-    <section class="stats-box py-4 mb-5">
-        <div class="container">
-            <div class="row text-center g-4">
-                <div class="col-4">
-                    <h2 class="fw-bold text-white h3 mb-1">100%</h2>
-                    <p class="text-white-50 small mb-0">Memnuniyet</p>
-                </div>
-                <div class="col-4" style="border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
-                    <h2 class="fw-bold text-white h3 mb-1">7/24</h2>
-                    <p class="text-white-50 small mb-0">Destek</p>
-                </div>
-                <div class="col-4">
-                    <h2 class="fw-bold text-white h3 mb-1">🚀</h2>
-                    <p class="text-white-50 small mb-0">Hızlı Teslim</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="hizmetler" class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-                        <div class="icon-wrapper"><i class="fas fa-shield-alt"></i></div>
-                        <h5 class="text-white">Yönetim Paneli</h5>
-                        <p class="small text-white-50">Tüm sistemlerimizi size özel yönetim paneliyle teslim ediyoruz.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-                        <div class="icon-wrapper"><i class="fas fa-tools"></i></div>
-                        <h5 class="text-white">Ücretsiz Kurulum</h5>
-                        <p class="small text-white-50">Teknik detaylarla boğuşmayın, kurulumu biz ücretsiz yapıyoruz.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-                        <div class="icon-wrapper"><i class="fas fa-bolt"></i></div>
-                        <h5 class="text-white">Jet Hızında</h5>
-                        <p class="small text-white-50">En yeni teknolojilerle (Python, React) ışık hızında bir deneyim.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-                        <div class="icon-wrapper"><i class="fas fa-headset"></i></div>
-                        <h5 class="text-white">Uzaktan Destek</h5>
-                        <p class="small text-white-50">Yazılım desteğimizle her zaman bir telefon kadar uzağınızdayız.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="urunler" class="product-section pb-5">
-        <div class="container">
-            <div class="text-center mb-5"><h2 class="fw-bold">Hazır Kurumsal Sistemler</h2></div>
-            
-            <div class="product-box" style="border-left: 5px solid var(--secondary-color);" data-tilt data-tilt-max="5" data-tilt-speed="400">
-                <div class="row align-items-center product-content">
-                    <div class="col-lg-7">
-                        <span class="product-badge mb-3 d-inline-block">VIP Randevu & İşletme</span>
-                        <h2 class="fw-bold text-white">KrtsBarber Pro 💈</h2>
-                        <p class="text-white-50">Erkek kuaförleri için dijital asistan.</p>
-                        
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <div class="feature-item"><i class="fas fa-check-double" style="color: var(--secondary-color);"></i> Admin Paneli Dahil</div>
-                                <div class="feature-item"><i class="fas fa-check-double" style="color: var(--secondary-color);"></i> Jet Hızında Arayüz</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item"><i class="fas fa-check-double" style="color: var(--secondary-color);"></i> Ücretsiz Kurulum</div>
-                                <div class="feature-item"><i class="fas fa-check-double" style="color: var(--secondary-color);"></i> 7/24 Yazılım Desteği</div>
-                            </div>
-                        </div>
-
-                        <a href="https://krts-booking.onrender.com" target="_blank" class="btn btn-glow mt-4">Demoyu Hemen Test Et</a>
-                    </div>
-                    <div class="col-lg-5 text-center d-none d-lg-block">
-                        <i class="fas fa-laptop-medical product-icon-lg" style="font-size: 120px; color: var(--secondary-color);"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-box" style="border-left: 5px solid #ff4d6d;" data-tilt data-tilt-max="5" data-tilt-speed="400">
-                <div class="row align-items-center product-content">
-                    <div class="col-lg-7">
-                        <span class="product-badge mb-3 d-inline-block" style="background: #ff4d6d; color: white;">Kadın Kuaförü & Güzellik</span>
-                        <h2 class="fw-bold text-white">KrtsBeauty Pro 💅</h2>
-                        <p class="text-white-50">Güzellik salonları ve kadın kuaförleri için özel randevu ve yönetim sistemi.</p>
-                        
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <div class="feature-item"><i class="fas fa-check-double" style="color: #ff4d6d;"></i> Kişiselleştirilebilir Panel</div>
-                                <div class="feature-item"><i class="fas fa-check-double" style="color: #ff4d6d;"></i> Hizmet Kategorileri</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item"><i class="fas fa-check-double" style="color: #ff4d6d;"></i> Personel Yönetimi</div>
-                                <div class="feature-item"><i class="fas fa-check-double" style="color: #ff4d6d;"></i> Şık Tasarım</div>
-                            </div>
-                        </div>
-
-                        <a href="https://krtsbayanrandevu.onrender.com/" target="_blank" class="btn btn-glow mt-4" style="background: linear-gradient(45deg, #ff4d6d, #c9184a);">Demoyu Hemen Test Et</a>
-                    </div>
-                    <div class="col-lg-5 text-center d-none d-lg-block">
-                        <i class="fas fa-spa product-icon-lg" style="font-size: 120px; color: #ff4d6d;"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-box" style="border-left: 5px solid #00f2ff;" data-tilt data-tilt-max="5" data-tilt-speed="400">
-                <div class="row align-items-center product-content">
-                    <div class="col-lg-7">
-                        <span class="product-badge mb-3 d-inline-block" style="background: #00f2ff; color: #10002b;">SİZE ÖZEL YAZILIM</span>
-                        <h2 class="fw-bold text-white">KrtsSoft Altyapı 🏗️</h2>
-                        <p class="text-white-50">Hazır kalıplara sığmayın. İş modelinize tam uyumlu, veritabanı destekli yazılım ekosistemi.</p>
-                        
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <div class="feature-item"><i class="fas fa-code" style="color: #00f2ff;"></i> Sıfırdan Kodlama</div>
-                                <div class="feature-item"><i class="fas fa-database" style="color: #00f2ff;"></i> Veritabanı Mimarisi</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item"><i class="fas fa-layer-group" style="color: #00f2ff;"></i> Ölçeklenebilir Yapı</div>
-                                <div class="feature-item"><i class="fas fa-project-diagram" style="color: #00f2ff;"></i> API Entegrasyonu</div>
-                            </div>
-                        </div>
-
-                        <a href="https://wa.me/905421565602" class="btn btn-outline-light rounded-pill px-4 mt-4">Projemi Anlat</a>
-                    </div>
-                    <div class="col-lg-5 text-center d-none d-lg-block">
-                        <i class="fas fa-network-wired product-icon-lg" style="font-size: 120px; color: #00f2ff; opacity: 0.6;"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-5 text-center border-top border-secondary position-relative" style="background: rgba(16, 0, 43, 0.9);">
-        <div class="container">
-            <h4 class="fw-bold text-white mb-3">KRTS MEDIA GROUP</h4>
-            <div class="d-flex justify-content-center gap-3 mb-4 fs-4">
-                <a href="https://instagram.com/krtsmediagroup" class="text-white"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/905421565602" class="text-white"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <p class="small text-white-50">Antalya'dan Dijital Çağa Uzanan Teknoloji Köprüsü. &copy; 2026</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/905421565602" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Daktilo Efekti Scripti
-        const textElement = document.querySelector('.typewriter-text');
-        const texts = ["Modern Web Siteleri", "Randevu Sistemleri", "Özel Yazılım Altyapısı", "Mobil Uygulamalar"];
-        let count = 0;
-        let index = 0;
-        let currentText = "";
-        let letter = "";
+        AOS.init({ duration: 1000, once: true });
 
-        (function type() {
-            if (count === texts.length) {
-                count = 0;
+        // Particles
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 60 },
+                color: { value: "#9d4edd" },
+                opacity: { value: 0.2 },
+                size: { value: 1.5 },
+                line_linked: { enable: true, distance: 200, color: "#9d4edd", opacity: 0.1, width: 1 },
+                move: { enable: true, speed: 1.5 }
             }
-            currentText = texts[count];
-            letter = currentText.slice(0, ++index);
+        });
 
-            textElement.textContent = letter;
-            if (letter.length === currentText.length) {
-                count++;
-                index = 0;
-                setTimeout(type, 2000); 
-            } else {
-                setTimeout(type, 100); 
-            }
-        })();
+        // Elite Cursor
+        const cursor = document.getElementById("cursor");
+        const follower = document.getElementById("cursor-follower");
+        window.addEventListener("mousemove", (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            follower.style.transform = `translate(${e.clientX - 15}px, ${e.clientY - 15}px)`;
+        });
 
-        // 3D Tilt Başlatma (Mobile'da çok hareket etmemesi için ayarlandı)
-        VanillaTilt.init(document.querySelectorAll(".service-card, .product-box"), {
-            max: 10,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.1,
-            gyroscope: false // Mobilde telefon hareket ettikçe oynamasın, sadece dokununca oynasın
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const pb = document.querySelector('.progress-bar');
+            pb.style.width = '100%';
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => document.getElementById('preloader').remove(), 500);
+            }, 2000);
         });
     </script>
 </body>
